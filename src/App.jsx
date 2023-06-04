@@ -1,18 +1,25 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Form from './components/Form'
 import Header from './components/Header'
 import ListadoPacientes from './components/ListadoPacientes'
 
 function App() {
-
-  const [pacientes, setPacientes] = useState([])
+  const INITIAL = JSON.parse(localStorage.getItem('pacientes')) ?? [];
+  const [pacientes, setPacientes] = useState(INITIAL)
   const [paciente, setPaciente] = useState({})
+  
+
+  useEffect(() => {
+    localStorage.setItem('pacientes', JSON.stringify( pacientes ));
+  }, [pacientes])
 
   const eliminarPaciente = (id) => {
       const pacientesActualizados = pacientes.filter( paciente => paciente.id !== id);
 
       setPacientes(pacientesActualizados)
   }
+
+
 
   return (
     <div className='container mt-20 mx-auto'>
