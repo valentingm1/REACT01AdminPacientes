@@ -14,7 +14,7 @@ function Form({ setPacientes, pacientes, paciente, setPaciente }) {
     if (Object.keys(paciente).length > 0) {
       setNombre(paciente.nombre);
       setPropietario(paciente.propietario);
-      setEmail(paciente.nombre);
+      setEmail(paciente.email);
       setFecha(paciente.fecha);
       setSintomas(paciente.sintomas);
     }
