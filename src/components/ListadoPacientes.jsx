@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Paciente from "./Paciente";
 
-function ListadoPacientes({pacientes, setPaciente}) {
+function ListadoPacientes({pacientes, setPaciente, eliminarPaciente}) {
 
   
   
@@ -22,6 +22,7 @@ function ListadoPacientes({pacientes, setPaciente}) {
           paciente={paciente}
           key={paciente.id}
           setPaciente={setPaciente}
+          eliminarPaciente={eliminarPaciente}
           />
         })
         }
